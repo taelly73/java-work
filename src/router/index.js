@@ -6,7 +6,7 @@ import SearchPage from '@/pages/SearchPage.vue'
 import Dashboard from '@/pages/Dashboard.vue'
 import Compare from '@/pages/Compare.vue'
 import Report from '@/pages/Report.vue'
-
+import PolicyDetailPage from '@/pages/PolicyDetailPage.vue' 
 // 路由配置表
 const routes = [
   {
@@ -39,7 +39,10 @@ const routes = [
     component: Report,
     meta: { title: '报告生成 - 政策分析系统' }
   },
-  
+  { path: '/policy/:id', name: 'PolicyDetail', component: PolicyDetailPage, props: true },
+
+  // fallback
+  { path: '/:pathMatch(.*)*', redirect: '/' }
 ]
 
 // 创建路由实例
